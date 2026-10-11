@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Aurabloom — Sérum Glow Vitamine C</title>
+<meta name="description" content="Sérum Glow Vitamine C 30 ml. Livré à Bamako, payez à la réception. Commandez en 30 secondes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --cream:#FBF4EA; --sand:#F3E7D5; --sand2:#EEDCC4;
+  --ink:#2A1C14; --ink2:#6E5A4C;
+  --clay:#C2502F; --clay-d:#A73F22; --gold:#C9992F; --plum:#5A2A38;
+  --green:#2F7D5B; --wa:#25D366; --line:#EADBC6;
+  --radius:18px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.5;padding-bottom:72px;
+}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","Plus Jakarta Sans",sans-serif;margin:0;letter-spacing:-.01em}
+img{max-width:100%}
+.wrap{max-width:560px;margin:0 auto;padding-inline:16px}
+
+/* annonce + header */
+.anoun{background:var(--ink);color:#F3E6D4;font-size:12px;font-weight:600;text-align:center;padding:8px 12px}
+.anoun b{color:var(--gold)}
+.hdr{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--cream) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:11px}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo .b{color:var(--clay)}
+.hdr .wa{display:inline-flex;align-items:center;gap:6px;background:var(--wa);color:#07361a;font-weight:800;
+  font-size:12px;padding:8px 12px;border-radius:10px;text-decoration:none}
+
+/* galerie */
+.gal{position:relative;aspect-ratio:1;border-radius:var(--radius);overflow:hidden;margin-top:16px;
+  background:radial-gradient(90% 80% at 50% 30%,#FBF0DF,transparent 60%),linear-gradient(160deg,#E9D4B8,#CBA477)}
+.gal .ptag{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.82);color:#4a3a2e;
+  font-size:11px;font-weight:700;padding:4px 9px;border-radius:8px}
+.gal .promo{position:absolute;top:12px;left:12px;background:var(--clay);color:#fff;font-size:12px;
+  font-weight:800;padding:5px 10px;border-radius:9px}
+.thumbs{display:flex;gap:8px;margin-top:10px}
+.thumbs i{flex:1;aspect-ratio:1;border-radius:12px;border:1px solid var(--line);cursor:pointer}
+.thumbs i.t1{background:linear-gradient(160deg,#E9D4B8,#CBA477)}
+.thumbs i.t2{background:linear-gradient(160deg,#E7CBD6,#A86C86)}
+.thumbs i.t3{background:linear-gradient(160deg,#CFE2CF,#7FA98A)}
+.thumbs i.sel{border:2px solid var(--clay)}
+
+/* infos produit */
+.cat{font-size:12px;color:var(--clay);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:16px}
+h1.title{font-size:24px;font-weight:800;line-height:1.1;margin:6px 0 8px}
+.rate{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink2)}
+.rate .st{color:var(--gold);letter-spacing:1px;font-size:13px}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:12px 0}
+.price b{font-size:28px;font-weight:800;color:var(--clay)}
+.price s{font-size:15px;color:var(--ink2)}
+.price .save{font-size:12px;font-weight:800;background:var(--gold);color:#2a1c14;padding:4px 9px;border-radius:8px}
+
+.promo-band{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:color-mix(in srgb,var(--clay) 8%,#fff);border:1px solid color-mix(in srgb,var(--clay) 25%,#fff);
+  border-radius:12px;padding:11px 13px;margin:6px 0}
+.promo-band b{font-size:13px;color:var(--clay-d);font-weight:800}
+.promo-band span{font-size:11px;color:var(--ink2);display:block}
+.promo-band .big{font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;color:var(--clay)}
+
+/* bénéfices */
+.benes{margin-top:16px}
+.benes h4{font-size:15px;font-weight:800;margin-bottom:9px}
+.benes ul{margin:0;padding:0}
+.benes li{list-style:none;font-size:14px;display:flex;gap:9px;align-items:flex-start;margin:8px 0}
+.benes .ck{flex:0 0 22px;height:22px;border-radius:7px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--green) 15%,transparent);color:var(--green);font-weight:800;font-size:13px}
+
+/* variantes */
+.variants{margin-top:18px}
+.variants .lbl{font-size:13px;font-weight:800;margin-bottom:8px}
+.vopts{display:flex;gap:10px;flex-wrap:wrap}
+.vopt{border:1.5px solid var(--line);border-radius:12px;padding:10px 16px;font-size:13px;font-weight:700;
+  background:#fff;cursor:pointer;user-select:none}
+.vopt.on{border-color:var(--clay);background:color-mix(in srgb,var(--clay) 8%,#fff);color:var(--clay-d)}
+
+/* formulaire */
+.oform{margin-top:22px;background:#fff;border:1.5px solid var(--clay);border-radius:var(--radius);overflow:hidden}
+.oform .ohd{background:var(--clay);color:#fff;padding:13px 15px}
+.oform .ohd b{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+.oform .ohd span{font-size:12px;opacity:.92}
+.oform .obd{padding:15px}
+.fld{margin-bottom:12px}
+.fld label{font-size:12px;font-weight:700;color:var(--ink2);display:block;margin-bottom:5px}
+.fld input{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;font-size:15px;
+  color:var(--ink);background:#FDFAF4;font-family:inherit}
+.fld input:focus{outline:none;border-color:var(--clay)}
+.fld .err{color:var(--clay-d);font-size:11px;font-weight:700;margin-top:4px;display:none}
+.fld.invalid input{border-color:var(--clay-d);background:color-mix(in srgb,var(--clay) 5%,#fff)}
+.fld.invalid .err{display:block}
+.frow{display:flex;gap:12px;align-items:flex-end}
+.qty{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:11px;overflow:hidden;width:128px}
+.qty b{flex:1;text-align:center;font-size:16px;font-weight:800}
+.qty button{width:40px;height:46px;border:0;background:var(--sand);font-size:20px;font-weight:700;
+  color:var(--ink);cursor:pointer}
+.totbox{flex:1}
+.totbox .in{border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;background:#fff;
+  display:flex;justify-content:space-between;align-items:center}
+.totbox .in b{font-weight:800;color:var(--clay);font-size:16px}
+.totbox .in span{font-size:10px;color:var(--green);font-weight:700}
+.paychoose{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.popt{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;
+  padding:11px 12px;font-size:13px;cursor:pointer}
+.popt.on{border-color:var(--green);background:color-mix(in srgb,var(--green) 7%,#fff)}
+.popt .rd{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto}
+.popt.on .rd{border-color:var(--green);background:radial-gradient(circle,var(--green) 44%,#fff 48%)}
+.popt b{font-weight:800}.popt small{display:block;font-size:11px;color:var(--ink2);font-weight:500}
+.popt .tag{margin-left:auto;font-size:9px;font-weight:800;color:var(--green);
+  background:color-mix(in srgb,var(--green) 14%,#fff);padding:4px 7px;border-radius:7px}
+.osummary{display:flex;justify-content:space-between;font-size:14px;margin-top:12px;padding-top:12px;
+  border-top:1px dashed var(--line)}
+.osummary b{font-weight:800;color:var(--clay);font-size:17px}
+.osubmit{width:100%;margin-top:13px;background:var(--wa);color:#07361a;border:0;cursor:pointer;
+  font-family:inherit;font-weight:800;font-size:16px;padding:16px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  box-shadow:0 8px 18px -8px rgba(37,211,102,.7)}
+.reassure-mini{display:flex;justify-content:center;gap:16px;margin-top:11px;font-size:11px;color:var(--ink2);font-weight:600}
+
+/* bande réassurance */
+.rstrip{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.rc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center}
+.rc .ic{flex:0 0 32px;height:32px;border-radius:9px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--green) 14%,transparent);color:var(--green)}
+.rc b{font-size:12.5px;display:block;line-height:1.2}
+.rc span{font-size:11px;color:var(--ink2)}
+
+/* avis */
+.sec-t{font-size:18px;font-weight:800;margin:26px 0 12px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:10px}
+.rev .hd{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.rev .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(140deg,#C98A5B,#7E4A30)}
+.rev .av.a2{background:linear-gradient(140deg,#D7A878,#A2673C)}
+.rev .nm{font-size:13px;font-weight:700}
+.rev .st{font-size:11px;color:var(--gold);letter-spacing:1px}
+.rev .vf{margin-left:auto;font-size:10px;font-weight:700;color:var(--green);
+  background:color-mix(in srgb,var(--green) 13%,#fff);padding:3px 8px;border-radius:7px}
+.rev p{font-size:13px;color:var(--ink2);margin:0}
+
+/* faq */
+.faq .q{border-top:1px solid var(--line);padding:13px 0;display:flex;justify-content:space-between;
+  align-items:center;gap:10px;cursor:pointer}
+.faq .q b{font-size:14px;font-weight:700}
+.faq .plus{color:var(--clay);font-weight:800;font-size:18px}
+.faq .a{display:none;font-size:13px;color:var(--ink2);padding-bottom:12px}
+.faq .a.show{display:block}
+
+/* footer */
+.foot{background:var(--ink);color:#E9D9C6;margin-top:28px;padding:22px 16px;border-radius:var(--radius) var(--radius) 0 0}
+.foot .lg{font-family:"Bricolage Grotesque";font-weight:800;font-size:18px;color:#fff}
+.foot .lg .b{color:var(--gold)}
+.foot p{font-size:12px;color:#C3AF9B;margin:8px 0 0}
+.foot .pays{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.foot .pay{font-size:11px;font-weight:800;padding:6px 10px;border-radius:8px;color:#fff}
+.foot .pay.cod{background:var(--green)}.foot .pay.wave{background:#1BA7F0}.foot .pay.marchand{background:var(--plum)}
+
+/* barre collante + wa flottant */
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--line);
+  padding:10px 16px;display:flex;gap:12px;align-items:center;max-width:560px;margin:0 auto}
+.buybar .pz b{font-size:17px;font-weight:800;color:var(--clay);display:block;line-height:1}
+.buybar .pz s{font-size:11px;color:var(--ink2)}
+.buybar .go{flex:1;background:var(--clay);color:#fff;border:0;cursor:pointer;font-family:inherit;
+  font-weight:800;font-size:14px;text-align:center;padding:14px;border-radius:12px}
+.fab{position:fixed;right:16px;bottom:82px;z-index:49;width:52px;height:52px;border-radius:50%;
+  background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4);text-decoration:none}
+
+/* confirmation */
+.confirm{display:none;text-align:center;padding:30px 16px}
+.confirm.show{display:block}
+.confirm .check{width:76px;height:76px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--green) 16%,#fff);border:2px solid color-mix(in srgb,var(--green) 35%,#fff);
+  color:var(--green);font-size:38px;font-weight:800}
+.confirm h2{font-size:22px;font-weight:800}
+.confirm p{font-size:13px;color:var(--ink2);margin:8px 0 0}
+.confirm .wa-again{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#07361a;
+  font-weight:800;font-size:14px;padding:14px 20px;border-radius:13px;text-decoration:none;margin-top:16px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="anoun">Livraison 24 à 48 h à Bamako · <b>Payez à la réception</b></div>
+
+<header class="hdr">
+  <div class="wrap">
+    <span class="logo">aura<span class="b">bloom</span></span>
+    <a class="wa" id="waHeader" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main class="wrap" id="shop">
+  <div class="gal">
+    <span class="promo">-50%</span>
+    <span class="ptag">Photo produit — à remplacer</span>
+  </div>
+  <div class="thumbs">
+    <i class="t1 sel"></i><i class="t2"></i><i class="t3"></i>
+  </div>
+
+  <div class="cat">Skincare · best-seller</div>
+  <h1 class="title" id="pName">Sérum Glow Vitamine C 30 ml</h1>
+  <div class="rate"><span class="st">★★★★★</span> 4,9 · basé sur tes vrais avis à venir</div>
+
+  <div class="price">
+    <b id="pPrice">9 000 FCFA</b><s>18 000 FCFA</s>
+    <span class="save">-50% · offre de lancement</span>
+  </div>
+
+  <div class="promo-band">
+    <div><b>Offre de lancement Aurabloom</b><span>Prix réduit pour les premières commandes</span></div>
+    <div class="big">-50%</div>
+  </div>
+
+  <div class="benes">
+    <h4>Pourquoi tu vas l'adorer</h4>
+    <ul>
+      <li><span class="ck">✓</span>Éclat visible dès 7 jours, teint plus unifié</li>
+      <li><span class="ck">✓</span>Atténue les taches et les marques</li>
+      <li><span class="ck">✓</span>Texture légère, pénètre vite, non gras</li>
+      <li><span class="ck">✓</span>Convient à tous types de peaux</li>
+    </ul>
+  </div>
+
+  <div class="variants">
+    <div class="lbl">Format</div>
+    <div class="vopts" id="variants">
+      <span class="vopt on" data-price="9000" data-old="18000" data-label="30 ml">30 ml · 9 000</span>
+      <span class="vopt" data-price="14000" data-old="28000" data-label="50 ml">50 ml · 14 000</span>
+    </div>
+  </div>
+
+  <!-- FORMULAIRE DE COMMANDE -->
+  <form class="oform" id="orderForm" novalidate>
+    <div class="ohd">
+      <b>🛍️ Commander en 30 secondes</b>
+      <span>Remplis, on t'appelle pour confirmer. Tu paies à la livraison.</span>
+    </div>
+    <div class="obd">
+      <div class="fld" id="f-name">
+        <label>Nom complet</label>
+        <input type="text" name="name" placeholder="Ex : Fatoumata Diallo" autocomplete="name">
+        <div class="err">Entre ton nom</div>
+      </div>
+      <div class="fld" id="f-phone">
+        <label>Téléphone (WhatsApp)</label>
+        <input type="tel" name="phone" placeholder="Ex : 76 00 00 00" autocomplete="tel" inputmode="tel">
+        <div class="err">Entre un numéro valide</div>
+      </div>
+      <div class="fld" id="f-addr">
+        <label>Quartier / Ville</label>
+        <input type="text" name="addr" placeholder="Ex : Hamdallaye ACI 2000, Bamako">
+        <div class="err">Entre ton quartier et ta ville</div>
+      </div>
+      <div class="frow" style="margin-bottom:12px">
+        <div class="fld" style="margin-bottom:0">
+          <label>Quantité</label>
+          <div class="qty">
+            <button type="button" id="qMinus" aria-label="moins">–</button>
+            <b id="qVal">1</b>
+            <button type="button" id="qPlus" aria-label="plus">+</button>
+          </div>
+        </div>
+        <div class="totbox">
+          <label style="font-size:12px;font-weight:700;color:var(--ink2);display:block;margin-bottom:5px">Sous-total produit</label>
+          <div class="in"><b id="subTotal">9 000 FCFA</b><span>+ livraison</span></div>
+        </div>
+      </div>
+      <div class="fld">
+        <label>Mode de paiement</label>
+        <div class="paychoose" id="payChoose">
+          <div class="popt on" data-pay="Paiement à la livraison">
+            <span class="rd"></span>
+            <div><b>Paiement à la livraison</b><small>Tu paies cash en recevant le colis</small></div>
+            <span class="tag">Recommandé</span>
+          </div>
+          <div class="popt" data-pay="Wave / Code Marchand (prépayé)">
+            <span class="rd"></span>
+            <div><b>Wave / Code Marchand</b><small>Prépayer et être livré en priorité</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="osummary"><span>Total à payer à la livraison</span><b id="grandTotal">10 000 FCFA</b></div>
+      <button type="submit" class="osubmit">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.6 0-1.2.6-1.8.9-2 .2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.7 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.8-.1 1.3Z"/></svg>
+        Confirmer ma commande sur WhatsApp
+      </button>
+      <div class="reassure-mini">
+        <span>🔒 Tes infos restent privées</span>
+        <span>🚚 Livré 24 à 48 h</span>
+      </div>
+    </div>
+  </form>
+
+  <!-- CONFIRMATION (affichée après envoi) -->
+  <div class="confirm" id="confirm">
+    <div class="check">✓</div>
+    <h2>Commande envoyée !</h2>
+    <p>WhatsApp s'ouvre avec ta commande déjà écrite. Clique sur <b>Envoyer</b> dans WhatsApp pour finaliser. On t'appelle sous 24 h pour confirmer.</p>
+    <a class="wa-again" id="waAgain" href="#" target="_blank" rel="noopener">Rouvrir WhatsApp</a>
+  </div>
+
+  <div class="rstrip">
+    <div class="rc"><span class="ic">💵</span><div><b>Payez à la réception</b><span>0 risque</span></div></div>
+    <div class="rc"><span class="ic">🚚</span><div><b>Livraison rapide</b><span>Bamako 24 à 48 h</span></div></div>
+    <div class="rc"><span class="ic">🛡️</span><div><b>Produit vérifié</b><span>avant envoi</span></div></div>
+    <div class="rc"><span class="ic">📞</span><div><b>Service client</b><span>7j/7 par WhatsApp</span></div></div>
+  </div>
+
+  <div class="sec-t">Avis clients</div>
+  <div class="rev">
+    <div class="hd"><span class="av"></span><div><div class="nm">Aïssata K.</div><div class="st">★★★★★</div></div><span class="vf">✓ Vérifié</span></div>
+    <p>« Mon teint est plus clair et uniforme. Les taches partent doucement. Je recommande. »</p>
+  </div>
+  <div class="rev">
+    <div class="hd"><span class="av a2"></span><div><div class="nm">Mariam T.</div><div class="st">★★★★★</div></div><span class="vf">✓ Vérifié</span></div>
+    <p>« Reçu en 1 jour à Bamako, payé à la livraison. Produit authentique, bien emballé. »</p>
+  </div>
+  <p style="font-size:11px;color:var(--ink2);margin:4px 0 0">Remplace ces avis par tes vrais retours clients dès tes premières ventes.</p>
+
+  <div class="sec-t">Questions fréquentes</div>
+  <div class="faq">
+    <div class="q"><b>Comment je paie ?</b><span class="plus">+</span></div>
+    <div class="a">Tu paies cash à la livraison, en recevant le colis. Mobile money possible aussi.</div>
+    <div class="q"><b>En combien de temps je reçois ?</b><span class="plus">+</span></div>
+    <div class="a">24 à 48 h à Bamako. On t'appelle sous 24 h pour confirmer l'adresse.</div>
+    <div class="q"><b>Livrez-vous hors de Bamako ?</b><span class="plus">+</span></div>
+    <div class="a">Oui, partout au Mali. Délai 2 à 5 jours selon la ville, frais indiqués à la confirmation.</div>
+    <div class="q"><b>Puis-je vérifier avant de payer ?</b><span class="plus">+</span></div>
+    <div class="a">Oui, tu peux ouvrir et vérifier le colis avant de régler le livreur.</div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap" style="padding:0">
+    <div class="lg">aura<span class="b">bloom</span></div>
+    <p>Produits tendance livrés partout à Bamako. Paie quand tu reçois.</p>
+    <div class="pays">
+      <span class="pay cod">Paiement livraison</span>
+      <span class="pay marchand">Code Marchand</span>
+      <span class="pay wave">Wave</span>
+    </div>
+    <p style="margin-top:14px">Contact : WhatsApp <span id="footPhone"></span></p>
+  </div>
+</footer>
+
+<div class="buybar">
+  <div class="pz"><b id="barPrice">9 000 FCFA</b><s>18 000</s></div>
+  <button class="go" id="barGo" type="button">Commander — payez à la réception</button>
+</div>
+<a class="fab" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24"><path fill="#07361a" d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.6 0-1.2.6-1.8.9-2 .2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.7 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.8-.1 1.3Z"/></svg>
+</a>
+
+<script>
+/* =========================================================
+   CONFIGURATION — modifie ces valeurs pour TA boutique
+   ========================================================= */
+var CONFIG = {
+  // Ton numero WhatsApp au format international SANS + ni espaces.
+  // Exemple Mali : 223 + ton numero  ->  "22376000000"
+  whatsapp: "22369393967",
+  productName: "Sérum Glow Vitamine C 30 ml",
+  deliveryFee: 1000,          // frais de livraison Bamako (FCFA)
+  currency: "FCFA"
+};
+/* ========================================================= */
+
+var state = { price: 9000, old: 18000, qty: 1, variant: "30 ml", pay: "Paiement à la livraison" };
+
+function fmt(n){ return n.toLocaleString("fr-FR").replace(/ /g," ") + " " + CONFIG.currency; }
+
+function render(){
+  var sub = state.price * state.qty;
+  var grand = sub + CONFIG.deliveryFee;
+  document.getElementById("pPrice").textContent = fmt(state.price);
+  document.getElementById("subTotal").textContent = fmt(sub);
+  document.getElementById("grandTotal").textContent = fmt(grand);
+  document.getElementById("qVal").textContent = state.qty;
+  document.getElementById("barPrice").textContent = fmt(state.price);
+}
+
+/* quantite */
+document.getElementById("qMinus").addEventListener("click", function(){
+  if(state.qty > 1){ state.qty--; render(); }
+});
+document.getElementById("qPlus").addEventListener("click", function(){
+  if(state.qty < 20){ state.qty++; render(); }
+});
+
+/* variantes */
+document.querySelectorAll("#variants .vopt").forEach(function(v){
+  v.addEventListener("click", function(){
+    document.querySelectorAll("#variants .vopt").forEach(function(x){ x.classList.remove("on"); });
+    v.classList.add("on");
+    state.price = parseInt(v.dataset.price, 10);
+    state.old = parseInt(v.dataset.old, 10);
+    state.variant = v.dataset.label;
+    render();
+  });
+});
+
+/* mode de paiement */
+document.querySelectorAll("#payChoose .popt").forEach(function(p){
+  p.addEventListener("click", function(){
+    document.querySelectorAll("#payChoose .popt").forEach(function(x){ x.classList.remove("on"); });
+    p.classList.add("on");
+    state.pay = p.dataset.pay;
+  });
+});
+
+/* faq */
+document.querySelectorAll(".faq .q").forEach(function(q){
+  q.addEventListener("click", function(){
+    var a = q.nextElementSibling;
+    var open = a.classList.toggle("show");
+    q.querySelector(".plus").textContent = open ? "–" : "+";
+  });
+});
+
+/* liens WhatsApp simples (header, fab, footer) */
+function waLink(text){
+  return "https://wa.me/" + CONFIG.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
+}
+var hello = "Bonjour Aurabloom, j'ai une question sur le " + CONFIG.productName;
+document.getElementById("waHeader").href = waLink(hello);
+document.getElementById("fabWa").href = waLink(hello);
+document.getElementById("footPhone").textContent = "+" + CONFIG.whatsapp;
+
+/* barre collante -> va au formulaire */
+document.getElementById("barGo").addEventListener("click", function(){
+  document.getElementById("orderForm").scrollIntoView({ behavior: "smooth", block: "start" });
+  document.querySelector("#f-name input").focus();
+});
+
+/* validation + envoi WhatsApp */
+function setInvalid(id, bad){
+  document.getElementById(id).classList.toggle("invalid", bad);
+}
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name = this.name.value.trim();
+  var phone = this.phone.value.trim();
+  var addr = this.addr.value.trim();
+
+  var okName = name.length >= 2;
+  var okPhone = phone.replace(/\D/g,"").length >= 7;
+  var okAddr = addr.length >= 3;
+  setInvalid("f-name", !okName);
+  setInvalid("f-phone", !okPhone);
+  setInvalid("f-addr", !okAddr);
+  if(!(okName && okPhone && okAddr)){
+    document.querySelector(".invalid input").focus();
+    return;
+  }
+
+  var sub = state.price * state.qty;
+  var grand = sub + CONFIG.deliveryFee;
+  var msg =
+    "NOUVELLE COMMANDE — Aurabloom\n" +
+    "-----------------------------\n" +
+    "Produit : " + CONFIG.productName + "\n" +
+    "Format : " + state.variant + "\n" +
+    "Quantité : " + state.qty + "\n" +
+    "Prix unitaire : " + fmt(state.price) + "\n" +
+    "Sous-total : " + fmt(sub) + "\n" +
+    "Livraison : " + fmt(CONFIG.deliveryFee) + "\n" +
+    "TOTAL à payer : " + fmt(grand) + "\n" +
+    "Paiement : " + state.pay + "\n" +
+    "-----------------------------\n" +
+    "Nom : " + name + "\n" +
+    "Téléphone : " + phone + "\n" +
+    "Quartier / Ville : " + addr;
+
+  var url = waLink(msg);
+  document.getElementById("waAgain").href = url;
+  window.open(url, "_blank");
+
+  // affiche l'ecran de confirmation
+  document.getElementById("orderForm").style.display = "none";
+  document.getElementById("confirm").classList.add("show");
+  document.getElementById("confirm").scrollIntoView({ behavior: "smooth", block: "center" });
+});
+
+render();
+</script>
+</body>
+</html>
