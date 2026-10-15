@@ -1,36 +1,59 @@
-# Aurabloom — mini-site 1 produit (COD)
+# Aurabloom, mini-site 1 produit (COD)
 
-Page produit unique, fonctionnelle, sans Shopify. Le client remplit le formulaire et sa commande part sur ton WhatsApp, déjà écrite. Tu paies zéro abonnement.
+Produit actuel : **Correcteur V34** (correcteur de couleur pour les dents), 9 900 FCFA, livraison gratuite à Bamako.
 
-## Lancer le site sur ton ordinateur
+Page produit unique avec offres par quantité (1, 2 ou 3 flacons) et formulaire de commande intégré, façon Releasit. Le client commande sans WhatsApp : la commande arrive dans un Google Sheet (et dans Netlify Forms en sauvegarde), avec une notification Telegram.
 
-Ouvre un terminal dans ce dossier et lance :
+La version précédente (Sérum Glow Vitamine C) est gardée dans `../archives/aurabloom-serum-glow-index.html`.
+
+⚠️ Les médias actuels (`media/`) proviennent du site de la marque d'origine. À remplacer par tes propres photos et vidéos dès que possible (risque de retrait du site ou des pubs).
+
+En ligne : https://aurabl.netlify.app/ (déployé par Netlify depuis le dépôt GitHub `aurabloom`).
+
+## Tester sur ton ordinateur
 
 ```
 python3 -m http.server 8000
 ```
 
-Puis ouvre dans ton navigateur : http://localhost:8000
+Puis ouvre http://localhost:8000. En local, l'envoi affiche une erreur tant que `sheetUrl` est vide, c'est normal : Netlify Forms ne marche qu'une fois en ligne.
 
-Pour arrêter : `Ctrl + C` dans le terminal.
+## Tout se règle dans le bloc CONFIG (bas de index.html)
 
-(Tu peux aussi juste double-cliquer sur `index.html`, mais le serveur local reproduit mieux les conditions réelles.)
+- `offers` : les offres, prix et étiquettes
+- `cities` : villes et frais de livraison (`0` = gratuite, `null` = frais annoncés par le livreur)
+- `sheetUrl` : l'URL du Google Apps Script (étape ci-dessous)
+- `facebookPixelId`, `tiktokPixelId` : tes IDs de pixel. Événements envoyés : ViewContent, InitiateCheckout, Purchase (TikTok : CompletePayment)
+- `media` : la galerie du haut (photos ou vidéos, dans le dossier `media/`)
+- `blocks` : les médias des 3 blocs en zigzag (`null` = bloc sans média). Vidéos MP4 courtes, sans son, moins de 2 Mo
+- `ingredients` : la liste des ingrédients (vide = la question est masquée)
+- `ticker` : les messages du bandeau qui défile
+- `contactWhatsapp` : lien discret en bas de page, vide pour le retirer
 
-## À configurer avant de tester une vraie commande
+## Recevoir les commandes dans Google Sheets (10 minutes, une seule fois)
 
-Dans `index.html`, en bas, cherche le bloc `CONFIG` :
+1. Crée un Google Sheet vide, nomme-le « Commandes Aurabloom ».
+2. Menu Extensions > Apps Script. Efface le contenu et colle tout `commandes-google-sheet.gs`.
+3. En haut du script, mets ton email dans `NOTIFY_EMAIL` pour être alerté à chaque commande.
+4. Choisis la fonction `setup` et clique Exécuter. Accepte les autorisations (c'est ton propre script).
+5. Déployer > Nouveau déploiement > type « Application Web ». Exécuter en tant que : Moi. Accès : Tout le monde. Déployer.
+6. Copie l'URL qui finit par `/exec` et colle-la dans `sheetUrl`.
 
-- `whatsapp` : ton numéro au format international, sans + ni espaces. Pour le Mali : `223` suivi de ton numéro. Exemple : `22376001122`.
-- `productName` : le nom du produit.
-- `deliveryFee` : les frais de livraison à Bamako (en FCFA).
+## Notification Telegram à chaque commande (5 minutes)
 
-Les prix et les deux formats se modifient directement dans le HTML (section `variants`).
+1. Dans Telegram, ouvre **@BotFather**, envoie `/newbot`, choisis un nom (ex : Aurabloom Commandes) et un identifiant finissant par `bot`. Il te donne un **token**.
+2. Ouvre ton nouveau bot et envoie-lui « bonjour ».
+3. Dans Apps Script : roue dentée (Paramètres du projet) > Propriétés du script > Ajouter : clé `TELEGRAM_TOKEN`, valeur = ton token. Enregistre.
+4. Choisis la fonction `connecterTelegram` et clique Exécuter. Tu reçois une commande TEST sur Telegram.
 
-## Ce que ça fait et ne fait pas
+Le token ne doit jamais être collé dans le code ni partagé : ce fichier est public sur GitHub. Si tu le perds ou le partages par erreur, envoie `/revoke` à @BotFather pour en générer un nouveau.
 
-- Fait : page produit, choix du format, quantité, calcul du total, formulaire, envoi de la commande sur WhatsApp, bouton WhatsApp flottant, FAQ.
-- Ne fait pas : pas de pixel Facebook/TikTok, pas de suivi des stocks, pas de tableau de bord des commandes (tout arrive dans WhatsApp). C'est voulu, pour tester vite et sans frais.
+Chaque commande crée une ligne avec une colonne Statut (Nouvelle, Confirmée, Expédiée, Livrée, Refusée, Annulée, Injoignable) et la source de la pub (`utm_source`).
 
-## Mettre en ligne plus tard
+## Netlify Forms (sauvegarde)
 
-Le site est 100 % statique. Pour le rendre accessible depuis les pubs, tu pourras le déposer gratuitement sur Netlify, Vercel ou Cloudflare Pages. On verra ça quand le test local te convient.
+Dans Netlify : Site configuration > Forms > activer la détection des formulaires, puis redéployer. Les commandes apparaissent dans l'onglet Forms, avec notifications email possibles.
+
+## Ancienne version
+
+L'ancienne page (commande via WhatsApp) reste dans l'historique du dépôt GitHub.
