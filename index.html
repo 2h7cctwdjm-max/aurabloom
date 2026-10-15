@@ -417,7 +417,8 @@ var CONFIG = {
   sheetUrl: "https://script.google.com/macros/s/AKfycbx_p2bwzMK4A32Jf1peEoBt055_l5UVvTdMDrAuDTtoA0E7CgwnEW0SV3H9sXPBjELsOA/exec",
 
   // Pixels publicitaires. Laisse vide tant que tu ne les as pas.
-  facebookPixelId: "641267231920493",
+  // Un ou plusieurs pixels Facebook : chaque visite et commande est envoyée à tous.
+  facebookPixelIds: ["641267231920493", "610017449029420"],
   tiktokPixelId: "",
 
   // Galerie du haut : photos (ou vidéos), dans l'ordre d'affichage.
@@ -456,11 +457,11 @@ var CONFIG = {
   var params = new URLSearchParams(location.search);
 
   /* ---------- pixels ---------- */
-  if (CONFIG.facebookPixelId) {
+  if (CONFIG.facebookPixelIds.length) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', CONFIG.facebookPixelId);
+    CONFIG.facebookPixelIds.forEach(function(id){ fbq('init', id); });
     fbq('track', 'PageView');
   }
   if (CONFIG.tiktokPixelId) {
