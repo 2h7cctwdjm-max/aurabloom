@@ -223,6 +223,16 @@ button,input,select{font:inherit;color:inherit}
   .tk{animation:none}
   .bar,.offer,.cta{transition:none}
 }
+.also{max-width:1120px;margin:0 auto;padding:48px 16px 8px}
+.also h2{font-size:clamp(22px,4.5vw,28px);font-weight:800;margin:0 0 16px}
+.also .cards{display:grid;gap:12px;grid-template-columns:1fr}
+.also a.card{display:block;border:1.5px solid var(--line);border-radius:18px;padding:18px;background:var(--paper);color:var(--ink);text-decoration:none}
+.also a.card:hover{border-color:var(--clay)}
+.also .k{display:block;font-size:12px;font-weight:800;color:var(--clay)}
+.also b{display:block;font-size:19px;margin:4px 0}
+.also span.d{display:block;font-size:14px;color:var(--ink2);line-height:1.5}
+.also .go{display:inline-block;margin-top:10px;font-weight:800;color:var(--clay)}
+@media (min-width:640px){.also .cards{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -375,6 +385,11 @@ button,input,select{font:inherit;color:inherit}
     </div>
   </section>
 </main>
+
+<section class="also">
+  <h2>Découvre aussi</h2>
+  <div class="cards"><a class="card" href="/huile/"><span class="k">Soin des cheveux</span><b>Huile de Chébé</b><span class="d">Pour cheveux secs et cassants, flacon de 100 ml.</span><span class="go">Voir le produit</span></a><a class="card" href="/savon/"><span class="k">Soin de la peau</span><b>Savon au Curcuma</b><span class="d">Pour nettoyer la peau et uniformiser le teint.</span><span class="go">Voir le produit</span></a></div>
+</section>
 
 <footer class="foot">
   <div class="in">
