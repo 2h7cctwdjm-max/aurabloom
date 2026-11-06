@@ -1,0 +1,15 @@
+.git
+.github
+.gitignore
+.nojekyll
+.DS_Store
+.playwright-cli
+.wrangler
+.env*
+README.md
+commandes-google-sheet.gs
+wrangler.jsonc
+wrangler.toml
+node_modules
+package.json
+package-lock.json

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nos produits | Aurabloom</title>
+<meta name="description" content="Des soins simples pour le sourire, les cheveux et la peau. Livraison gratuite à Bamako, tu paies à la réception.">
+<meta name="theme-color" content="#3B1C26">
+<meta property="og:title" content="Nos produits | Aurabloom">
+<meta property="og:description" content="Des soins simples pour le sourire, les cheveux et la peau. Livraison gratuite à Bamako, tu paies à la réception.">
+<meta property="og:image" content="../huile/media/chebe.jpg">
+<!-- Meta Pixel Code (code officiel Facebook, pixel 641267231920493) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '641267231920493');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=641267231920493&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --cream:#FFFFFF; --paper:#FAF7F3; --sand:#F0E9DF; --line:#E8DFD3;
+  --ink:#2A1C14; --ink2:#6B5647;
+  --clay:#C2502F; --clay-d:#A23E22;
+  --gold:#C9992F; --gold-l:#F2C76B;
+  --plum:#5A2A38; --plum-d:#3B1C26;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font:16px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,h2{font-family:"Bricolage Grotesque","Plus Jakarta Sans",sans-serif;margin:0;letter-spacing:-.02em;line-height:1.05}
+p{margin:0}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* bandeau défilant */
+.topbar{background:var(--plum-d);color:#F3DCC9;font-size:14px;font-weight:600;padding:10px 0;overflow:hidden;white-space:nowrap;text-transform:uppercase;letter-spacing:.02em}
+.tk{display:inline-flex;align-items:center;animation:tk 80s linear infinite}
+.topbar:hover .tk{animation-play-state:paused}
+.tk span{display:inline-flex;align-items:center;padding:0 12px}
+.tk .hl{color:var(--gold-l);font-weight:800}
+.tk .sep{font-style:normal;padding:0 12px}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* menu */
+.hdr{background:var(--plum-d);border-bottom:1px solid rgba(255,255,255,.08)}
+.hdr .in{max-width:1120px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;letter-spacing:-.03em;color:#FCEBDD;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.logo span{color:var(--gold-l)}
+.nav{margin-left:auto;display:flex;gap:6px;align-items:center}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:12px;font-weight:700;font-size:14px;color:#FCEBDD;text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--gold-l)}
+.nav a.write{background:rgba(255,255,255,.1)}
+@media (max-width:420px){.nav a.write{display:none}.nav a{padding:0 0 0 12px}}
+
+/* accroche */
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.hero{padding:36px 0 8px}
+.hero h1{font-size:clamp(34px,9vw,60px);font-weight:800;color:var(--plum-d);max-width:16ch}
+.hero h1 span{background:var(--clay);color:#fff;padding:0 .2em;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p{color:var(--ink2);max-width:46ch;margin-top:14px;font-size:17px}
+.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.trust li{background:#F7EBD2;color:var(--plum-d);border-radius:14px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;line-height:1.25}
+
+/* produits */
+.list{padding-top:40px;scroll-margin-top:8px}
+.list h2{font-size:clamp(26px,5.5vw,36px);font-weight:800;color:var(--plum-d)}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.card{display:flex;flex-direction:column;border:1.5px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;color:var(--ink);text-decoration:none;transition:border-color .15s}
+.card:hover{border-color:var(--clay)}
+.card .img{position:relative;aspect-ratio:1/1;overflow:hidden;background:#FBF4EA}
+.card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card .txt{padding:16px}
+.card .k{font-size:12px;font-weight:800;color:var(--clay-d)}
+.card b{display:block;font-family:"Bricolage Grotesque";font-size:20px;margin:4px 0}
+.card .price{display:block;font-weight:800;color:var(--plum-d)}
+.card .go{display:inline-block;margin-top:10px;font-weight:800;color:var(--clay-d)}
+
+/* comment ça marche */
+.steps{counter-reset:s;display:grid;grid-template-columns:1fr;gap:12px;margin:22px 0 0;padding:0;list-style:none}
+.steps li{counter-increment:s;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 18px 18px 64px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;
+  background:var(--gold);color:var(--ink);font-family:"Bricolage Grotesque";font-weight:800;display:grid;place-items:center}
+.steps b{display:block}
+.steps span{color:#DCC2B0;font-size:15px}
+.promise{margin:48px 0 0;background:var(--plum-d);color:#F6E3D3}
+.promise .in{max-width:1120px;margin:0 auto;padding:44px 16px}
+.promise h2{color:#fff;font-size:clamp(26px,5.5vw,36px);font-weight:800;max-width:18ch}
+
+/* bas de page */
+.foot{background:var(--ink);color:#CDB9A6;padding:32px 16px}
+.foot .in{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between}
+.foot .logo{font-size:20px}
+.foot p{font-size:14px;margin-top:6px;max-width:40ch}
+.foot a{color:#F2D9C4}
+.care{margin-top:10px}
+.care b{color:#F2D9C4}
+.care a{display:flex;align-items:center;gap:6px;min-height:44px;width:fit-content;font-weight:700;text-decoration:none}
+
+@media (min-width:640px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .promise .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:960px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .tk{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <p class="sr">Livraison gratuite partout à Bamako. Livré en 24 à 48 h. Tu paies à la réception. Tu vérifies ton colis avant de payer.</p>
+  <div class="tk" id="ticker" aria-hidden="true"></div>
+</div>
+<header class="hdr">
+  <div class="in">
+    <a class="logo" href="/produits/">aura<span>bloom</span></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#produits">Nos produits</a>
+      <a class="write" href="https://wa.me/22369393967" target="_blank" rel="noopener">Nous écrire</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Prends soin de toi, <span>paie à la réception</span></h1>
+      <p>Des soins simples pour le sourire, les cheveux et la peau. Livraison gratuite à Bamako.</p>
+      <ul class="trust">
+        <li>Paiement à la livraison</li>
+        <li>Livré en 24 à 48 h à Bamako</li>
+        <li>Colis vérifié avant paiement</li>
+      </ul>
+    </section>
+
+    <section class="list" id="produits">
+      <h2>Nos produits</h2>
+      <div class="cards">
+        <a class="card" href="/huile/">
+          <div class="img"><img src="../huile/media/chebe.jpg" alt="Huile de Chébé" width="900" height="1200" decoding="async"></div>
+          <div class="txt">
+            <span class="k">Soin des cheveux</span>
+            <b>Huile de Chébé</b>
+            <span class="price">9 900 FCFA</span>
+            <span class="go">Voir et commander →</span>
+          </div>
+        </a>
+        <a class="card" href="/savon/">
+          <div class="img"><img src="../savon/media/savon-produit.jpg" alt="Savon au Curcuma" width="900" height="900" loading="lazy" decoding="async"></div>
+          <div class="txt">
+            <span class="k">Soin de la peau</span>
+            <b>Savon au Curcuma</b>
+            <span class="price">9 900 FCFA</span>
+            <span class="go">Voir et commander →</span>
+          </div>
+        </a>
+        <a class="card" href="/">
+          <div class="img"><img src="../media/v34-produit-aurabloom.jpg" alt="Correcteur V34" width="1080" height="1080" loading="lazy" decoding="async"></div>
+          <div class="txt">
+            <span class="k">Soin du sourire</span>
+            <b>Correcteur V34</b>
+            <span class="price">9 900 FCFA</span>
+            <span class="go">Voir et commander →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <section class="promise">
+    <div class="in">
+      <h2>Tu commandes, on livre, tu paies</h2>
+      <ol class="steps">
+        <li><b>Tu remplis le formulaire</b><span>30 secondes, sans créer de compte et sans payer.</span></li>
+        <li><b>Le livreur t'appelle</b><span>Il fixe l'heure avec toi et livre gratuitement en 24 à 48 h à Bamako.</span></li>
+        <li><b>Tu vérifies, puis tu paies</b><span>Tu ouvres le colis devant le livreur et tu paies en espèces.</span></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="in">
+    <div>
+      <a class="logo" href="/produits/">aura<span>bloom</span></a>
+      <p>Produits beauté et tendance, livrés au Mali. Tu paies à la réception.</p>
+    </div>
+    <div>
+      <p>Une question ? <a href="https://wa.me/22369393967" target="_blank" rel="noopener">Écris-nous sur WhatsApp</a></p>
+      <p class="care"><b>Service client</b><a href="tel:+22369393967">Appelle-nous au +223 69 39 39 67</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Bandeau : mêmes messages, séparateur et vitesse que les pages produit */
+(function(){
+  var messages = [
+    { text: "Livraison gratuite partout à Bamako", hl: true },
+    { text: "Livré en 24 à 48 h" },
+    { text: "Tu paies à la réception", hl: true },
+    { text: "Tu vérifies ton colis avant de payer" }
+  ];
+  var separator = "🇲🇱", speed = 50;
+  var tk = document.getElementById("ticker");
+  for (var r = 0; r < 8; r++) messages.forEach(function(m){
+    var sep = document.createElement("i");
+    sep.className = "sep"; sep.textContent = separator;
+    tk.appendChild(sep);
+    var s = document.createElement("span");
+    s.textContent = m.text;
+    if (m.hl) s.className = "hl";
+    tk.appendChild(s);
+  });
+  var set = function(){ if (tk.scrollWidth) tk.style.animationDuration = (tk.scrollWidth / 2 / speed) + "s"; };
+  set();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
+})();
+</script>
+</body>
+</html>

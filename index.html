@@ -233,6 +233,107 @@ button,input,select{font:inherit;color:inherit}
 .also span.d{display:block;font-size:14px;color:var(--ink2);line-height:1.5}
 .also .go{display:inline-block;margin-top:10px;font-weight:800;color:var(--clay)}
 @media (min-width:640px){.also .cards{grid-template-columns:1fr 1fr}}
+
+/* ---------- améliorations reprises de Mykids ---------- */
+/* mots clés */
+.lede strong,.zz .t strong{color:var(--ink);font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+/* bandeau : séparateur et majuscules réglables dans CONFIG */
+.topbar{font-size:14px;padding:10px 0}
+.topbar.up{text-transform:uppercase;letter-spacing:.02em}
+.tk{align-items:center}
+.tk span{padding:0 12px}
+.tk span::after{content:none}
+.tk .hl{font-weight:800}
+.tk .sep{font-style:normal;padding:0 12px}
+/* bouton d'achat */
+.cta.jump{margin:4px 0 16px}
+/* réassurance */
+.trustrow{list-style:none;margin:16px 0 0;padding:14px;display:grid;gap:12px;background:#fff;border:1.5px dashed var(--line);border-radius:16px}
+.trustrow li{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink2);line-height:1.3}
+.trustrow svg{flex:0 0 36px;width:36px;height:36px;padding:7px;border-radius:12px;background:#F7EBD2;color:var(--plum)}
+.trustrow b{display:block;color:var(--ink);font-size:15px}
+/* fenêtre de commande : bas d'écran sur téléphone, centrée sur ordinateur */
+.order.pop{position:fixed;inset:0;z-index:1000;margin:0;display:none;align-items:flex-end;justify-content:center;background:rgba(59,28,38,.62)}
+.order.pop.open{display:flex;animation:popBg .2s ease}
+.pop-box{width:100%;max-width:560px;max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:20px 20px 0 0;padding:0 16px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -20px 50px -20px rgba(0,0,0,.5);animation:popUp .25s ease}
+.pop-box:focus{outline:none}
+.pop-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:10px;margin:0 -16px 14px;padding:10px 8px 10px 16px;background:#fff;border-bottom:1px solid var(--line);color:var(--plum)}
+.pop-head svg{width:24px;height:24px;flex:0 0 24px}
+.pop-head b{flex:1;font-family:"Bricolage Grotesque","Plus Jakarta Sans",sans-serif;font-size:clamp(15px,4.4vw,19px);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.pop-x{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border:0;border-radius:50%;background:none;color:var(--plum);cursor:pointer}
+.pop-x svg{width:22px;height:22px}
+html.lock,html.lock body{overflow:hidden}
+@keyframes popUp{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+@keyframes popBg{from{opacity:0}to{opacity:1}}
+/* délai de livraison et aide du champ adresse */
+.eta{display:flex;gap:10px;align-items:center;margin:4px 0 0;padding:12px 14px;border-radius:14px;background:#EEF6F1;color:#1F5B41;font-size:14px;line-height:1.35}
+.eta svg{flex:0 0 22px;width:22px;height:22px;color:var(--green)}
+.fld .help{font-size:13px;color:var(--ink2);margin-top:5px}
+.fld.bad .help{display:none}
+/* titre des blocs */
+.sec h2.story-title{max-width:none;font-size:clamp(30px,8vw,46px);margin-bottom:8px;padding-bottom:16px;position:relative}
+.story-title::after{content:"";position:absolute;bottom:0;left:0;width:72px;height:5px;border-radius:3px;background:var(--gold)}
+.story-title + .zz{border-top:0}
+/* service client */
+.care{margin-top:10px}
+.care b{color:#F2D9C4}
+.care a{display:flex;align-items:center;gap:6px;min-height:44px;width:fit-content;font-weight:700;text-decoration:none}
+@media (min-width:640px){
+  .order.pop{align-items:center;padding:24px}
+  .pop-box{border-radius:20px;max-height:90vh}
+}
+@media (min-width:960px){.trustrow{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.order.pop.open,.pop-box{animation:none}}
+/* prix sur une seule ligne, formulaire moins serré dans la fenêtre */
+.offer .amt b{white-space:nowrap}
+.recap .total span{flex:1 1 0;min-width:0}
+.recap .total b{flex:0 0 auto;max-width:64%;text-align:right;font-size:22px;line-height:1.15}
+.pop-box .form{padding:16px 12px}
+@media (max-width:400px){
+  .offer{gap:4px 10px;padding:14px 12px}
+  .offer .amt b{font-size:18px}
+}
+/* ---------- mises en page de Cheickna sur Mykids ---------- */
+/* titre « Tout savoir sur le produit » centré et mis en valeur */
+.sec h2.story-title{font-size:clamp(34px,9vw,58px);line-height:1.05;letter-spacing:-.025em;padding-bottom:18px;text-align:center}
+.story-title::after{left:50%;transform:translateX(-50%)}
+/* titres des blocs en majuscules avec un trait dessous, texte plus foncé et aéré */
+.sec .zz h2{position:relative;max-width:none;text-transform:uppercase;font-size:clamp(22px,5vw,30px);letter-spacing:0;line-height:1.15;padding-bottom:16px;margin-bottom:20px}
+.sec .zz h2::after{content:"";position:absolute;left:0;bottom:0;width:90px;height:4px;border-radius:2px;background:var(--clay)}
+.zz .t{color:var(--ink);font-size:16px;line-height:1.7}
+.zz .t + .t{margin-top:10px}
+/* avis photos : carrousel, photo ronde, nom, badge, étoiles, texte */
+.avis{background:#fff;color:var(--ink);padding:40px 16px 24px}
+.avis .wrap{max-width:1100px;margin:0 auto}
+.av-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -16px;padding:0 16px 8px;scroll-padding-left:16px}
+.av-grid::-webkit-scrollbar{display:none}
+.av-item{flex:0 0 85%;max-width:85%;scroll-snap-align:start;display:flex;gap:16px;align-items:flex-start}
+.av-photo{flex:0 0 96px;width:96px;height:96px;border-radius:50%;overflow:hidden;background:#F7EBD2;color:var(--plum);display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:800;font-size:32px}
+.av-photo img{width:100%;height:100%;object-fit:cover}
+.av-body{flex:1;min-width:0;padding-top:4px}
+.av-top{display:flex;align-items:center;justify-content:space-between;gap:6px 10px;flex-wrap:wrap}
+.av-name{display:flex;align-items:center;gap:6px;font-weight:600;font-size:17px;line-height:1.3}
+.av-name svg{width:20px;height:20px;flex:0 0 20px}
+.av-stars{display:flex;gap:2px}
+.av-stars svg{width:20px;height:20px}
+.av-text{margin-top:6px;font-size:15px;line-height:1.5}
+@media (min-width:750px){
+  .av-grid{margin:0;padding:0 0 8px;scroll-padding-left:0}
+  .av-item{flex:0 0 42%;max-width:42%}
+  .av-photo{flex-basis:110px;width:110px;height:110px}
+  .av-text{font-size:16px}
+}
+/* « Achetez maintenant » tient dans la barre du bas sur petit téléphone */
+@media (max-width:400px){
+  .bar .in{gap:10px}
+  .bar button{padding:14px;font-size:15px}
+}
+/* menu du haut : « Nos produits » reste visible sur téléphone */
+.nav{margin-left:auto;display:flex;gap:6px;align-items:center}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:12px;font-weight:700;font-size:14px;color:#FCEBDD;text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--gold-l)}
+.nav a.write{background:rgba(255,255,255,.1)}
+@media (max-width:420px){.nav a.write{display:none}.nav a{padding:0 0 0 12px}}
 </style>
 </head>
 <body>
@@ -243,8 +344,11 @@ button,input,select{font:inherit;color:inherit}
 </div>
 <header class="hdr">
   <div class="in">
-    <a class="logo" href="#">aura<span>bloom</span></a>
-    <span class="trust">Livraison gratuite à Bamako, paiement à la réception</span>
+    <a class="logo" href="/produits/">aura<span>bloom</span></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="/produits/#produits">Nos produits</a>
+      <a class="write" href="https://wa.me/22369393967" target="_blank" rel="noopener">Nous écrire</a>
+    </nav>
   </div>
 </header>
 
@@ -255,20 +359,35 @@ button,input,select{font:inherit;color:inherit}
     <div class="buy">
       <p class="kicker">Soin du sourire</p>
       <h1>Correcteur <span class="nw">V34</span></h1>
-      <p class="from">À partir de <b id="fromPrice">9 900 FCFA</b></p>
-      <p class="lede">Un gel violet qui neutralise la teinte jaune des dents. Ton sourire paraît plus blanc dès la première utilisation, en 30 secondes de brossage.</p>
+      <p class="from" hidden>À partir de <b id="fromPrice">9 900 FCFA</b></p>
+      <button type="button" class="cta jump" id="jump" aria-haspopup="dialog">Achetez maintenant</button>
+      <p class="lede">Un gel violet qui <strong>neutralise la teinte jaune</strong> des dents. Ton sourire paraît plus blanc dès la première utilisation, <strong>en 30 secondes de brossage</strong>.</p>
       <ul class="perks">
         <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Effet immédiat</li>
         <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z" fill="currentColor"/></svg></span>Sourire plus blanc</li>
         <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>30 secondes par jour</li>
       </ul>
 
-      <div class="order" id="order">
+      <ul class="trustrow">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6" fill="currentColor"/></svg><span><b>Paiement à la livraison</b>Rien à payer en ligne</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="currentColor"/><circle cx="17" cy="17.5" r="1.8" fill="currentColor"/></svg><span><b>Livraison gratuite</b>à Bamako, en 24 à 48 h</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.5 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><b>Colis vérifié</b>avant de payer</span></li>
+      </ul>
+
+      <div class="order pop" id="order" role="dialog" aria-modal="true" aria-labelledby="popTitle">
+        <div class="pop-box" id="popBox" tabindex="-1">
+        <div class="pop-head">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="currentColor"/><circle cx="17" cy="17.5" r="1.8" fill="currentColor"/></svg>
+          <b id="popTitle">Paiement à la livraison</b>
+          <button type="button" class="pop-x" id="popX" aria-label="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+        </div>
         <form id="orderForm" novalidate>
           <fieldset class="offers" id="offers">
             <legend>Choisis ton offre</legend>
             <!-- rempli par le script depuis CONFIG.offers -->
           </fieldset>
+
+          <p class="eta" id="eta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span></span></p>
 
           <div class="form">
             <h2>Tes infos de livraison</h2>
@@ -286,17 +405,11 @@ button,input,select{font:inherit;color:inherit}
               <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex : 76 00 00 00">
               <p class="err">Écris un numéro malien à 8 chiffres.</p>
             </div>
-            <div class="row2">
-              <div class="fld" id="f-city">
-                <label for="city">Ville</label>
-                <select id="city" name="city"></select>
-                <p class="err">Choisis ta ville.</p>
-              </div>
-              <div class="fld" id="f-district">
-                <label for="district">Quartier et repère</label>
-                <input id="district" name="district" type="text" placeholder="Ex : Hamdallaye, près de la pharmacie">
-                <p class="err">Écris ton quartier.</p>
-              </div>
+            <div class="fld" id="f-district">
+              <label for="district">Adresse</label>
+              <input id="district" name="district" type="text" autocomplete="street-address" placeholder="Ex : Hamdallaye, près du marché">
+              <p class="help">Quartier et repère. Hors de Bamako, ajoute ta ville.</p>
+              <p class="err">Écris ton adresse : quartier et un repère (ajoute ta ville si tu n'es pas à Bamako).</p>
             </div>
 
             <div class="recap" aria-live="polite">
@@ -306,10 +419,9 @@ button,input,select{font:inherit;color:inherit}
             </div>
 
             <button class="cta" type="submit" id="cta">
-              Je commande, je paie à la livraison
-              <small id="ctaSub">Total 9 900 FCFA</small>
+              Validez ma commande
             </button>
-            <p class="sendErr" id="sendErr" role="alert">La commande n'est pas partie. Vérifie ta connexion internet puis appuie à nouveau sur le bouton.</p>
+            <p class="sendErr" id="sendErr" role="alert">La commande n'est pas partie. Vérifie ta connexion internet puis appuie à nouveau sur le bouton. Si ça continue, <a href="https://wa.me/22369393967" target="_blank" rel="noopener">écris-nous sur WhatsApp</a>.</p>
             <p class="reass">Tu peux ouvrir et vérifier le colis avant de payer.</p>
           </div>
         </form>
@@ -320,6 +432,7 @@ button,input,select{font:inherit;color:inherit}
           <p class="num">Numéro de commande <b id="dNum"></b></p>
           <ul id="dList"></ul>
           <p class="next">Le livreur t'appelle au <b id="dPhone"></b> pour fixer l'heure de livraison. Garde ton téléphone allumé.</p>
+        </div>
         </div>
       </div>
 
@@ -332,19 +445,22 @@ button,input,select{font:inherit;color:inherit}
   </section>
 
   <section class="sec" id="blocks">
-    <div class="zz">
+    <h2 class="story-title">Tout savoir sur le produit</h2>
+    <div class="zz rev">
       <div class="zmedia" data-block="0"></div>
       <div>
-        <h2>Le violet efface le jaune</h2>
-        <p class="t">C'est le principe du cercle des couleurs : le violet et le jaune s'annulent. Le gel V34 dépose une fine couche violette sur l'émail qui neutralise la teinte jaune. Résultat, tes dents paraissent plus blanches.</p>
+        <h2>Le violet neutralise le jaune</h2>
+        <p class="t">C'est le principe du cercle des couleurs : <strong>le violet et le jaune s'annulent</strong>.</p>
+        <p class="t">Le gel V34 dépose une fine couche violette sur l'émail qui neutralise la teinte jaune.</p>
+        <p class="t">Résultat, <strong>tes dents paraissent plus blanches</strong>.</p>
       </div>
     </div>
 
-    <div class="zz rev">
+    <div class="zz">
       <div class="zmedia" data-block="1"></div>
       <div>
         <h2>30 secondes, c'est tout</h2>
-        <p class="t">À faire après ton brossage, le matin ou avant une sortie.</p>
+        <p class="t">À faire <strong>après ton brossage</strong>, le matin ou avant une sortie.</p>
         <ol class="steps">
           <li><b>Brosse tes dents</b><span>Avec ton dentifrice habituel, comme d'habitude.</span></li>
           <li><b>2 pressions de V34</b><span>Sur une brosse sèche, brosse 30 secondes en couvrant toutes les dents.</span></li>
@@ -353,11 +469,12 @@ button,input,select{font:inherit;color:inherit}
       </div>
     </div>
 
-    <div class="zz">
+    <div class="zz rev">
       <div class="zmedia" data-block="2"></div>
       <div>
         <h2>Un sourire plus éclatant en un instant</h2>
-        <p class="t">Idéal avant un rendez-vous, une photo, un mariage ou une journée importante. Tu peux l'utiliser chaque jour pour garder un sourire net.</p>
+        <p class="t">Idéal <strong>avant un rendez-vous, une photo, un mariage</strong> ou une journée importante.</p>
+        <p class="t">Tu peux l'utiliser chaque jour pour garder un sourire net.</p>
         <p class="note">L'effet est cosmétique et temporaire : il agit uniquement à la surface des dents et s'estompe avec les repas et les boissons. Ce n'est pas un blanchiment définitif. Les résultats varient selon la teinte de départ.</p>
       </div>
     </div>
@@ -374,7 +491,13 @@ button,input,select{font:inherit;color:inherit}
     </div>
   </section>
 
-  <section class="sec">
+  <!-- Avis photos : reste caché tant que CONFIG.reviews est vide -->
+  <section class="avis" id="avis" aria-label="Avis clients" hidden>
+    <div class="wrap"><div class="av-grid" id="avGrid"></div></div>
+  </section>
+
+  <!-- Masqué comme sur Mykids. Retire « hidden » pour le réafficher. -->
+  <section class="sec" hidden>
     <h2>Questions fréquentes</h2>
     <div class="faq">
       <details><summary>Je dois payer quelque chose maintenant ?</summary><p>Non. Tu paies uniquement à la livraison, en espèces, après avoir vu ton colis.</p></details>
@@ -386,7 +509,8 @@ button,input,select{font:inherit;color:inherit}
   </section>
 </main>
 
-<section class="also">
+<!-- Masqué comme sur Mykids. Retire « hidden » pour le réafficher. -->
+<section class="also" hidden>
   <h2>Découvre aussi</h2>
   <div class="cards"><a class="card" href="/huile/"><span class="k">Soin des cheveux</span><b>Huile de Chébé</b><span class="d">Pour cheveux secs et cassants, flacon de 100 ml.</span><span class="go">Voir le produit</span></a><a class="card" href="/savon/"><span class="k">Soin de la peau</span><b>Savon au Curcuma</b><span class="d">Pour nettoyer la peau et uniformiser le teint.</span><span class="go">Voir le produit</span></a></div>
 </section>
@@ -394,11 +518,12 @@ button,input,select{font:inherit;color:inherit}
 <footer class="foot">
   <div class="in">
     <div>
-      <a class="logo" href="#">aura<span>bloom</span></a>
+      <a class="logo" href="/produits/">aura<span>bloom</span></a>
       <p>Produits beauté et tendance, livrés au Mali. Tu paies à la réception.</p>
     </div>
     <div>
       <p id="contactLine"></p>
+      <p class="care" id="careLine"></p>
     </div>
   </div>
 </footer>
@@ -406,7 +531,7 @@ button,input,select{font:inherit;color:inherit}
 <div class="bar" id="bar" aria-hidden="true">
   <div class="in">
     <div class="p"><b>Correcteur V34</b><span id="barSub">À partir de 9 900 FCFA, livraison gratuite à Bamako</span></div>
-    <button type="button" id="barGo" tabindex="-1">Commander</button>
+    <button type="button" id="barGo" tabindex="-1">Achetez maintenant</button>
   </div>
 </div>
 
@@ -442,8 +567,18 @@ var CONFIG = {
     { name: "Sikasso",     fee: null },
     { name: "Kayes",       fee: null },
     { name: "Mopti",       fee: null },
-    { name: "Autre ville", fee: null }
+    { name: "Sévaré",      fee: null },
+    { name: "Koutiala",    fee: null },
+    { name: "Bougouni",    fee: null },
+    { name: "San",         fee: null },
+    { name: "Kita",        fee: null },
+    { name: "Gao",         fee: null },
+    { name: "Tombouctou",  fee: null }
   ],
+
+  // Délai affiché dans la fenêtre de commande, selon la ville reconnue dans l'adresse.
+  etaMain: "Livraison gratuite à Bamako, en 24 à 48 h.",
+  etaOther: "Livraison dans ta ville en 2 à 5 jours. Le livreur t'annonce les frais à l'appel.",
 
   // URL de ton Google Apps Script (voir commandes-google-sheet.gs). Vide = Netlify seulement.
   sheetUrl: "https://script.google.com/macros/s/AKfycbx_p2bwzMK4A32Jf1peEoBt055_l5UVvTdMDrAuDTtoA0E7CgwnEW0SV3H9sXPBjELsOA/exec",
@@ -459,7 +594,7 @@ var CONFIG = {
     { image: "media/v34-produit-aurabloom.jpg" }
   ],
 
-  // Médias des 3 blocs (le violet efface le jaune, 30 secondes, le sourire). null = bloc sans média.
+  // Médias des 3 blocs (le violet neutralise le jaune, 30 secondes, le sourire). null = bloc sans média.
   blocks: [
     { video: "media/v34-gel.mp4" },
     { video: "media/v34-application.mp4" },
@@ -471,6 +606,20 @@ var CONFIG = {
 
   // Contact affiché discrètement en bas de page. Vide = rien.
   contactWhatsapp: "22369393967",
+
+  // Avis clients, seulement de vrais avis. Vide = la section reste cachée.
+  // Ex : { photo: "media/avis-1.jpg", name: "Prénom Nom", rating: 5, verified: true, text: "Son avis" }
+  // verified: true uniquement pour un achat réel confirmé. photo est facultatif.
+  reviews: [],
+
+  // Service client en bas de page. Vide = rien. careHours : horaires, ex "Lundi au samedi, de 8 h à 18 h".
+  carePhone: "+223 69 39 39 67",
+  careHours: "",
+
+  // Bandeau : séparateur, vitesse (pixels par seconde, plus grand = plus rapide), majuscules.
+  tickerSeparator: "🇲🇱",
+  tickerSpeed: 50,
+  tickerUpper: true,
 
   // Messages du bandeau qui défile en haut. hl: true = en doré.
   ticker: [
@@ -510,11 +659,19 @@ var CONFIG = {
   // 2 moitiés identiques de 4 répétitions : la boucle à -50% est invisible, même sur grand écran
   var tk = $("ticker");
   for (var r = 0; r < 8; r++) CONFIG.ticker.forEach(function(m){
+    var sep = document.createElement("i");
+    sep.className = "sep"; sep.textContent = CONFIG.tickerSeparator;
+    tk.appendChild(sep);
     var s = document.createElement("span");
     s.textContent = m.text;
     if (m.hl) s.className = "hl";
     tk.appendChild(s);
   });
+  if (CONFIG.tickerUpper) tk.parentNode.classList.add("up");
+  // Vitesse constante en pixels par seconde, quelle que soit la longueur des messages
+  var setTk = function(){ if (tk.scrollWidth) tk.style.animationDuration = (tk.scrollWidth / 2 / CONFIG.tickerSpeed) + "s"; };
+  setTk();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setTk);
 
   /* ---------- photos et vidéos ---------- */
   // Vidéo muette en boucle (effet GIF, en bien plus léger). Elle ne se charge et ne joue
@@ -590,17 +747,26 @@ var CONFIG = {
       '<span class="sub">' + o.sub + '</span>';
     offersBox.appendChild(l);
   });
-  var citySel = $("city");
-  citySel.innerHTML = '<option value="">Choisis ta ville</option>' +
-    CONFIG.cities.map(function(c, i){ return '<option value="' + i + '">' + c.name + '</option>'; }).join("");
-  citySel.value = "0";
+  // Un seul champ « Adresse » : la ville est reconnue dans le texte, sinon c'est la première de CONFIG.cities.
+  // « Route de Koulikoro » ou « Rue de Kayes » sont des adresses de Bamako, pas d'autres villes.
+  var norm = function(t){ return String(t).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); };
+  function detectCity(txt){
+    var main = CONFIG.cities[0];
+    var t = " " + norm(txt) + " ";
+    if (t.indexOf(" " + norm(main.name) + " ") !== -1) return main;
+    t = t.replace(/ (route|rte|rue|gare|marche|avenue|boulevard) (de |du |d )?[a-z0-9]+(?= )/g, " ");
+    for (var i = 1; i < CONFIG.cities.length; i++) {
+      if (t.indexOf(" " + norm(CONFIG.cities[i].name) + " ") !== -1) return CONFIG.cities[i];
+    }
+    return main;
+  }
   $("fromPrice").textContent = fmt(CONFIG.offers[0].price);
   $("barSub").textContent = "À partir de " + fmt(CONFIG.offers[0].price) + ", livraison gratuite à Bamako";
 
   function current(){
     var o = CONFIG.offers[+document.querySelector('input[name="offer"]:checked').value];
-    var c = citySel.value === "" ? null : CONFIG.cities[+citySel.value];
-    var fee = c ? c.fee : null;
+    var c = detectCity($("district").value);
+    var fee = c.fee;
     return { offer: o, city: c, fee: fee, total: o.price + (fee || 0) };
   }
   function render(){
@@ -609,10 +775,15 @@ var CONFIG = {
     $("rSub").textContent = fmt(s.offer.price);
     $("rShip").textContent = shipText(s.fee, "Annoncée par le livreur");
     $("rTotal").textContent = fmt(s.total) + (s.fee === null ? " + livraison" : "");
-    $("ctaSub").textContent = "Total " + $("rTotal").textContent;
+    $("eta").querySelector("span").textContent = s.city === CONFIG.cities[0] ? CONFIG.etaMain : CONFIG.etaOther;
   }
   offersBox.addEventListener("change", render);
-  citySel.addEventListener("change", render);
+  // Frais et délai se mettent à jour pendant que le client écrit son adresse
+  var addrTimer;
+  $("district").addEventListener("input", function(){
+    clearTimeout(addrTimer);
+    addrTimer = setTimeout(render, 250);
+  });
   render();
 
   /* ---------- début de commande (pixel) ---------- */
@@ -624,19 +795,85 @@ var CONFIG = {
 
   /* ---------- barre « Commander » collante ---------- */
   var bar = $("bar");
+  var order = $("order");
+  var topVisible = true;
+  var update = function(){ bar.classList.toggle("show", !topVisible && !order.classList.contains("open")); };
   if ("IntersectionObserver" in window) {
-    var visible = { order: false, top: true };
-    var update = function(){ bar.classList.toggle("show", !visible.order && !visible.top); };
-    new IntersectionObserver(function(e){ visible.order = e[0].isIntersecting; update(); }).observe($("order"));
-    new IntersectionObserver(function(e){ visible.top = e[0].isIntersecting; update(); }).observe(document.querySelector(".buy h1"));
+    new IntersectionObserver(function(e){ topVisible = e[0].isIntersecting; update(); }).observe(document.querySelector(".buy h1"));
   }
-  $("barGo").addEventListener("click", function(){
-    $("order").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
+
+  /* ---------- fenêtre de commande ---------- */
+  // S'ouvre avec « Je commande », se ferme avec la croix, la touche Échap ou un clic sur le fond sombre
+  var lastFocus = null;
+  function openOrder(){
+    lastFocus = document.activeElement;
+    order.classList.add("open");
+    document.documentElement.classList.add("lock");
+    update();
+    $("popBox").scrollTop = 0;
+    $("popBox").focus({ preventScroll: true });
+  }
+  function closeOrder(){
+    order.classList.remove("open");
+    document.documentElement.classList.remove("lock");
+    update();
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+  $("jump").addEventListener("click", openOrder);
+  $("barGo").addEventListener("click", openOrder);
+  $("popX").addEventListener("click", closeOrder);
+  order.addEventListener("click", function(e){ if (e.target === order) closeOrder(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && order.classList.contains("open")) closeOrder(); });
+  // Lien direct vers le formulaire (ex : pub avec #order) : on ouvre la fenêtre
+  if (location.hash === "#order") openOrder();
 
   /* ---------- contact discret ---------- */
   if (CONFIG.contactWhatsapp) {
     $("contactLine").innerHTML = 'Une question ? <a href="https://wa.me/' + CONFIG.contactWhatsapp + '" target="_blank" rel="noopener">Écris-nous sur WhatsApp</a>';
+  }
+  if (CONFIG.carePhone) {
+    var care = $("careLine");
+    var b = document.createElement("b");
+    b.textContent = "Service client" + (CONFIG.careHours ? " : " + CONFIG.careHours : "");
+    var a = document.createElement("a");
+    a.href = "tel:" + CONFIG.carePhone.replace(/\s/g, "");
+    a.textContent = "Appelle-nous au " + CONFIG.carePhone;
+    care.appendChild(b); care.appendChild(a);
+  }
+
+  /* ---------- avis photos ---------- */
+  if (CONFIG.reviews && CONFIG.reviews.length) {
+    var avGrid = $("avGrid");
+    var starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z";
+    CONFIG.reviews.forEach(function(r){
+      var item = document.createElement("div"); item.className = "av-item";
+      var ph = document.createElement("div"); ph.className = "av-photo";
+      if (r.photo) { var im = document.createElement("img"); im.src = r.photo; im.alt = r.name; im.loading = "lazy"; ph.appendChild(im); }
+      else ph.textContent = String(r.name || "").charAt(0);
+      var body = document.createElement("div"); body.className = "av-body";
+      var top = document.createElement("div"); top.className = "av-top";
+      var nm = document.createElement("span"); nm.className = "av-name"; nm.textContent = r.name;
+      if (r.verified) nm.insertAdjacentHTML("beforeend", '<svg viewBox="0 0 24 24" role="img" aria-label="Achat vérifié"><circle cx="12" cy="12" r="11" fill="#2F7D5B"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+      var st = document.createElement("span"); st.className = "av-stars"; st.setAttribute("aria-label", r.rating + " sur 5");
+      for (var i = 1; i <= 5; i++) st.insertAdjacentHTML("beforeend", '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="' + (i <= r.rating ? "#C9992F" : "#D9D9D9") + '" d="' + starPath + '"/></svg>');
+      top.appendChild(nm); top.appendChild(st); body.appendChild(top);
+      if (r.text) { var tx = document.createElement("p"); tx.className = "av-text"; tx.textContent = "“" + r.text + "”"; body.appendChild(tx); }
+      item.appendChild(ph); item.appendChild(body); avGrid.appendChild(item);
+    });
+    $("avis").hidden = false;
+    // Défilement automatique toutes les 3 secondes, en pause quand la cliente touche le carrousel
+    if (!reduceMotion) {
+      var avPause = false, avTimer;
+      var avNext = function(){
+        if (avPause || avGrid.scrollWidth <= avGrid.clientWidth + 5) return;
+        var w = avGrid.children[0].offsetWidth + 14, m = avGrid.scrollWidth - avGrid.clientWidth;
+        avGrid.scrollTo({ left: avGrid.scrollLeft >= m - 5 ? 0 : Math.min(avGrid.scrollLeft + w, m), behavior: "smooth" });
+      };
+      var avStart = function(){ clearInterval(avTimer); avTimer = setInterval(avNext, 3000); };
+      ["touchstart","mousedown"].forEach(function(ev){ avGrid.addEventListener(ev, function(){ avPause = true; }, { passive: true }); });
+      ["touchend","mouseup"].forEach(function(ev){ avGrid.addEventListener(ev, function(){ setTimeout(function(){ avPause = false; avStart(); }, 3000); }, { passive: true }); });
+      avStart();
+    }
   }
 
   /* ---------- validation + envoi ---------- */
@@ -647,7 +884,7 @@ var CONFIG = {
     return d;
   }
   function mark(id, bad){ $(id).classList.toggle("bad", bad); return !bad; }
-  ["name","phone","district","city"].forEach(function(n){
+  ["name","phone","district"].forEach(function(n){
     $(n).addEventListener("input", function(){ $("f-" + n).classList.remove("bad"); });
   });
 
@@ -655,7 +892,22 @@ var CONFIG = {
     return fetch(url, Object.assign({ method: "POST", body: body }, opts || {}));
   }
 
-  var sending = false;
+  // Envoie au Google Sheet et attend sa confirmation (25 secondes maximum sur réseau lent).
+  function sendSheet(data){
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = ctrl ? setTimeout(function(){ ctrl.abort(); }, 25000) : null;
+    return send(CONFIG.sheetUrl, new URLSearchParams(data), ctrl ? { signal: ctrl.signal } : {})
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if (timer) clearTimeout(timer);
+        if (!res || !res.ok) throw new Error((res && res.error) || "refus");
+      }, function(err){
+        if (timer) clearTimeout(timer);
+        throw err;
+      });
+  }
+
+  var sending = false, lastSig = "", lastId = "";
   $("orderForm").addEventListener("submit", function(e){
     e.preventDefault();
     if (sending) return;
@@ -666,13 +918,15 @@ var CONFIG = {
     var ok = [
       mark("f-name", f.name.value.trim().length < 2),
       mark("f-phone", !/^[5-9]\d{7}$/.test(phone)),
-      mark("f-city", citySel.value === ""),
-      mark("f-district", f.district.value.trim().length < 2)
+      mark("f-district", f.district.value.trim().length < 3)
     ].every(Boolean);
-    if (!ok) { f.querySelector(".bad input, .bad select").focus(); return; }
+    if (!ok) { f.querySelector(".bad input").focus(); return; }
 
     var s = current();
-    var id = "AB-" + Date.now().toString(36).toUpperCase().slice(-6);
+    // Si la cliente réessaie la même commande, le numéro ne change pas : le script évite le doublon.
+    var sig = [f.name.value.trim(), phone, f.district.value.trim(), s.offer.label].join("|");
+    if (sig !== lastSig) { lastSig = sig; lastId = "AB-" + Date.now().toString(36).toUpperCase().slice(-6); }
+    var id = lastId;
     var data = {
       order_id: id,
       name: f.name.value.trim(),
@@ -694,13 +948,13 @@ var CONFIG = {
     $("sendErr").classList.remove("show");
 
     var jobs = [];
-    if (CONFIG.sheetUrl) {
-      // no-cors : Google ne renvoie pas de réponse lisible, une requête partie = commande enregistrée
-      jobs.push(send(CONFIG.sheetUrl, new URLSearchParams(data), { mode: "no-cors" }));
+    if (CONFIG.sheetUrl) jobs.push(sendSheet(data));
+    // La sauvegarde Netlify Forms n'existe que sur le site de secours Netlify.
+    if (/\.netlify\.app$/.test(location.hostname)) {
+      jobs.push(send("/", new URLSearchParams(Object.assign({ "form-name": "commande" }, data)), {
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+      }).then(function(r){ if (!r.ok) throw new Error("netlify " + r.status); }));
     }
-    jobs.push(send("/", new URLSearchParams(Object.assign({ "form-name": "commande" }, data)), {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" }
-    }).then(function(r){ if (!r.ok) throw new Error("netlify " + r.status); }));
 
     Promise.allSettled(jobs).then(function(res){
       var success = res.some(function(r){ return r.status === "fulfilled"; });
@@ -717,7 +971,7 @@ var CONFIG = {
         [CONFIG.productName + ", " + s.offer.label, fmt(s.offer.price)],
         ["Livraison", shipText(s.fee, "annoncée par le livreur")],
         ["À payer à la livraison", $("rTotal").textContent],
-        ["Adresse", data.district + ", " + data.city]
+        ["Adresse", data.district]
       ].forEach(function(r){
         var li = document.createElement("li");
         var a = document.createElement("span"); a.textContent = r[0];
